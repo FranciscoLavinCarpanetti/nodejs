@@ -1,0 +1,49 @@
+@host = http://localhost:3000
+
+############################
+### Peticiones /products ###
+############################
+
+GET {{host}}/products
+###
+POST {{host}}/products
+###
+PUT {{host}}/products
+###
+DELETE {{host}}/products
+
+################################
+### Peticiones /api/products ###
+################################
+
+GET {{host}}/api/products
+###
+POST {{host}}/api/products
+###
+PUT {{host}}/api/products
+###
+DELETE {{host}}/api/products
+
+#############################
+### Peticiones /api/users ###
+#############################
+
+GET {{host}}/api/users
+###
+POST {{host}}/api/users
+###
+PUT {{host}}/api/users
+###
+DELETE {{host}}/api/users
+
+### RUTAS EXTRA
+GET {{host}}/students/all
+
+###
+DELETE {{host}}/api/students
+
+###
+PUT {{host}}/api/users/admin
+
+### 
+POST {{host}}/users/new

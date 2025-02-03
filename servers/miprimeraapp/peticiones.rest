@@ -1,0 +1,8 @@
+GET http://localhost:3000/api/empleado
+
+###
+POST http://localhost:3000/estudiantes/creacion
+
+###
+DELETE http://localhost:3000/api/productos
+
