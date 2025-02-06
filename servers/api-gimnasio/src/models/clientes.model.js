@@ -11,6 +11,26 @@ const selectAll = async () => {
     return result; // array de clientes
 }
 
+const selectByDni = async (clienteDni) => {
+  const [result] = await pool.query('select * from clientes like dni = ?',
+     [`%${clienteDni}%`],
+ ); 
+return result;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Obtiene un cliente por su ID desde la base de datos.
  * 
@@ -102,5 +122,5 @@ const deleteById = async (clienteId) => {
 }
 
 module.exports = {
-    selectAll, selectById, selectMayores, create, updateById, deleteById, selectByProfesorId
+    selectAll,selectById, selectMayores, create, updateById, deleteById, selectByProfesorId, selectByDni
 }

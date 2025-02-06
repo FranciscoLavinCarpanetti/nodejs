@@ -8,6 +8,34 @@ const getAllClientes = async (req, res, next) => {
         next(error);
     }
 }
+const getDni = async (req, res, next) => {
+     const { clienteDni } = req.params;
+  try {
+     const clientes =  await Cliente.selectByDni(clienteDni);
+      res.json(clientes);
+  
+  } catch (error) {
+        next(error);
+
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 const getById = async (req, res, ext) => {
     const { clienteId } = req.params;
@@ -69,4 +97,4 @@ const deleteCliente = async (req, res, next) => {
     }
 }
 
-module.exports = { getAllClientes, getById, getMayores, createCliente, updateCliente, deleteCliente }
+module.exports = { getAllClientes, getById, getMayores, createCliente, updateCliente, deleteCliente, getDni }

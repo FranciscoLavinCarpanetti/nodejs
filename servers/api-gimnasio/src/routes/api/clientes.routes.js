@@ -2,14 +2,16 @@
 // /api/clientes
 const router = require('express').Router();
 
-const { getAllClientes, createCliente, updateCliente, deleteCliente, getById, getMayores } = require('../../controllers/clientes.controller');
+const { getAllClientes, createCliente, updateCliente, deleteCliente, getById, getMayores, getDni } = require('../../controllers/clientes.controller');
+const { checkClienteId } = require('../../middleware/clientes.middleware');
 
 router.get('/', getAllClientes);
-router.get('/:clienteId', getById);
+router.get('/:clienteId',checkClienteId, getById);
 router.get('/edad/:minEdad', getMayores);
+router.get('/dni/:cienteDni', getDni);
 
 router.post('/', createCliente);
-router.put('/:clienteId', updateCliente);
-router.delete('/:clienteId', deleteCliente);
+router.put('/:clienteId',checkClienteId, updateCliente);
+router.delete('/:clienteId',checkClienteId, deleteCliente);
 
 module.exports = router;

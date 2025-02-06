@@ -1,9 +1,12 @@
 @host = http://localhost:3000
 
 GET {{host}}/api/clientes
+###
+
+GET {{host}}/api/clientes/dni/32
 
 ###
-GET {{host}}/api/clientes/678
+GET {{host}}/api/clientes/345
 
 ###
 GET {{host}}/api/clientes/edad/9
@@ -44,7 +47,12 @@ Content-Type: application/json
 DELETE {{host}}/api/clientes/144
 
 #################
+### MONITORES ###
+#################
+
 GET {{host}}/api/monitores
 
 ###
 GET {{host}}/api/monitores/clientes
+
+
