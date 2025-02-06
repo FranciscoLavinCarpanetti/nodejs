@@ -56,3 +56,26 @@ GET {{host}}/api/monitores
 GET {{host}}/api/monitores/clientes
 
 
+
+
+##################
+#### Usuarios ####
+##################
+
+POST {{host}}/api/usuarios/registro
+Content-Type: application/json
+
+{
+    "username": "Lpaco",
+    "email": "francisco@gmail.com",
+    "password": "1234"
+    }
+
+###
+POST {{host}}/api/usuarios/login
+Content-Type: application/json
+
+{
+    "email": "ines@gmail.com",
+    "password": "12345"
+    }
