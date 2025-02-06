@@ -1,0 +1,50 @@
+@host = http://localhost:3000
+
+GET {{host}}/api/clientes
+
+###
+GET {{host}}/api/clientes/678
+
+###
+GET {{host}}/api/clientes/edad/9
+
+### 
+POST {{host}}/api/clientes
+Content-Type: application/json
+
+{
+    "nombre": "Ángel",
+    "apellidos": "Ruiz",
+    "direccion": "Calle Falsa 123",
+    "email": "angel3@gmail.com",
+    "edad": 29,
+    "sexo": "M",
+    "cuota": 16.90,
+    "fecha_nacimiento": "1997-06-10",
+    "dni": "89182937T"
+}
+
+### 
+PUT {{host}}/api/clientes/67
+Content-Type: application/json
+
+{
+  "nombre": "Corabel",
+  "apellidos": "Headford",
+  "direccion": "52 Nelson Park",
+  "email": "cheadford1u@zimbio.com",
+  "edad": 78,
+  "sexo": "F",
+  "cuota": "49.90",
+  "fecha_nacimiento": "1973-10-27",
+  "dni": "581918306f"
+}
+
+### 
+DELETE {{host}}/api/clientes/144
+
+#################
+GET {{host}}/api/monitores
+
+###
+GET {{host}}/api/monitores/clientes
