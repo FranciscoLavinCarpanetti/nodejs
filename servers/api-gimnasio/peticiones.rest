@@ -66,9 +66,9 @@ POST {{host}}/api/usuarios/registro
 Content-Type: application/json
 
 {
-    "username": "Lpaco",
+    "username": "francisco",
     "email": "francisco@gmail.com",
-    "password": "1234"
+    "password": "12345"
     }
 
 ###
