@@ -1,6 +1,7 @@
 @host = http://localhost:3000
 
 GET {{host}}/api/clientes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsInVzdWFyaW9Sb2xlIjoicmVndWxhciIsImlhdCI6MTczODkyMDE2OX0.uXEpg8HdzU9KmPcLl0XWUANUF2QYQ5dnl8b5m9o1Xkc
 ###
 
 GET {{host}}/api/clientes/dni/32

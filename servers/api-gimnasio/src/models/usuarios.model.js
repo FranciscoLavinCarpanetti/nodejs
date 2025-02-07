@@ -46,9 +46,26 @@ const selectByEmail = async (email) => {
 
 }
 
-
+/**
+ * Busca un usuario en la base de datos por su ID.
+ * 
+ * Esta función consulta la base de datos para obtener los datos de un usuario cuyo
+ * identificador único (`id`) coincida con el proporcionado. Si el usuario existe, 
+ * devuelve un objeto con sus datos; si no, retorna `null`.
+ * 
+ * @async
+ * @function selectById
+ * @param {number} usuarioId - Identificador único del usuario a buscar.
+ * @returns {Promise<Object|null>} Un objeto con los datos del usuario si se encuentra, o `null` si no existe.
+ * @throws {Error} Si ocurre un error durante la ejecución de la consulta.
+ */
+const selectById = async (usuarioId) => {
+    const [result] = await pool.query('SELECT * FROM usuarios WHERE id = ?', [usuarioId]);
+    if (result.length === 0) return null;
+    return result[0];
+}
 
 
 module.exports = {
-    create, selectByEmail
+    create, selectByEmail, selectById
 }
