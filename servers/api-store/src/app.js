@@ -7,6 +7,9 @@ app.use(express.json());
 app.use(cors());
 
 // Route configuration
+app.use('/api', require('./routes/api.routes'));
+
+
 // Ex.
 // app.use('/api', require('./routes/api'));
 
