@@ -16,7 +16,7 @@ const getAll = async (req, res, next) => {
 const getByPrice = async (req, res, next) => {
     const { minPrice } = req.query;
     try {
-        const products = await Product.find({ price: { $gte: minPrice } });
+        const products = await Product.find({ price: { $gte: minPrice } }).sort({ price: -1 });
         res.json(products);
     } catch (error) {
         next(error);
@@ -42,10 +42,10 @@ const getByPrice = async (req, res, next) => {
  * @returns {Promise<void>} Devuelve una respuesta JSON con los productos encontrados o maneja un error.
  * @throws {Error} Si ocurre un error durante la consulta a la base de datos.
  */
-const getByDeparment = async (req, res, next) => {
-    const { deparment } = req.params;
+const getByDepartment = async (req, res, next) => {
+    const { department } = req.params;
     try {
-        const products = await Product.find({ deparment });
+        const products = await Product.find({ department });
         res.json(products);
     } catch (error) {
         next(error);
@@ -109,7 +109,7 @@ const deleteById = async (req, res, next) => {
 
 module.exports = {
     getAll,
-    getByDeparment,
+    getByDepartment,
     getById,
     createProduct,
     updateById,
