@@ -99,12 +99,28 @@ const createProduct = async (req, res, next) => {
 
 
 const updateById = async (req, res, next) => {
-    res.send('PUT product by id');
+    const { productId } = req.params;
+    try {
+        const product = await Product.findByIdAndUpdate(productId, req.body, { new: true });
+        res.json(product);
+    }
+    catch (error) {
+        next(error);
+
+    }
 };
 
 
 const deleteById = async (req, res, next) => {
-    res.send('DELETE product by id');
+    const { productId } = req.params;
+    try {
+        const product = await Product.findByIdAndDelete(productId);
+        res.json(product);
+    }
+    catch (error) {
+        next(error);
+
+    }
 };
 
 module.exports = {

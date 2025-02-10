@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const { getAll, getByDepartment, getById, createProduct, updateById, deleteById, getByPrice } = require('../../controllers/products.controller');
+const { checkToken, checkAdmin } = require('../../middlewares/users.middleware');
 
 
 router.get('/', getAll);
@@ -10,9 +11,9 @@ router.get('/:productoId', getById);
 
 
 
-router.post('/', createProduct);
-router.put('/:productoId', updateById);
-router.delete('/:productoId', deleteById);
+router.post('/', checkToken, createProduct);
+router.put('/:productoId', checkToken, updateById);
+router.delete('/:productoId', checkToken, checkAdmin, deleteById);
 
 
 

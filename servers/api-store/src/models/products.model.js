@@ -6,7 +6,11 @@ const productSchema = new Schema({
     deparment: String,
     price: Number,
     stock: Number,
-    available: Boolean
+    available: Boolean,
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 }, {
     timestamps: true, versionKey: false
 });
