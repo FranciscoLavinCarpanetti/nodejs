@@ -5,7 +5,7 @@ const app = require('./src/app');
 // Config .env
 require('dotenv').config();
 
-// Database connection (MongoDB configuration)
+// Config DB
 require('./src/config/db');
 
 // Server creation
