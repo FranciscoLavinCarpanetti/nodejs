@@ -9,10 +9,6 @@ app.use(cors());
 // Route configuration
 app.use('/api', require('./routes/api.routes'));
 
-
-// Ex.
-// app.use('/api', require('./routes/api'));
-
 // 404 handler
 app.use((req, res, next) => {
     res.status(404).json({

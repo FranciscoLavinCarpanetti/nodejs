@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-
 const userSchema = new Schema({
     username: String,
     email: {
@@ -8,16 +7,13 @@ const userSchema = new Schema({
         unique: true
     },
     password: String,
-    role: String,
-    roles: {
+    role: {
         type: String,
         default: 'regular'
-
     }
 }, {
     timestamps: true, versionKey: false
 });
 
 const User = model('user', userSchema);
-
 module.exports = User;

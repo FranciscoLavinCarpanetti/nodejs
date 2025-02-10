@@ -1,82 +1,62 @@
 @host = http://localhost:3000
 
-
-####################
-### VER PRODUCTOS###
-####################
-
 GET {{host}}/api/products
+
 ###
+GET {{host}}/api/products/price/950
 
-GET {{host}}/api/products/67a8d7f6324d3cbf5165cbd4
-
-##########################
-
-GET {{host}}/api/products/price/1600
 ###
+GET {{host}}/api/products/671b89453c3445b535fd408d
 
-GET {{host}}/api/products/671f6f8b2bede92b1af1a399
-
-######################
-### CREAR PRODUCTO ###
-######################
+###
 POST {{host}}/api/products
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2E5ZTIyMmNkYzIzMzMyMmY1NmI5MTYiLCJ1c2VyUm9sZSI6ImFkbWluIiwiaWF0IjoxNzM5MTg3NzI4fQ.3adO9GvUaaMPMFnYMCMboMwdTMJsDeb_c2jFIbVn2dU
 
 {
-    "name": "Molinillo de cafe",
-    "description": "Molinillo de cafe eléctrico",
-    "price": 30,
-    "department": "electrodomesticos",
-    "stock": 12,
+    "name": "cafetera",
+    "description": "nespreso de muy buena calidad",
+    "price": 20.99,
+    "department": "hogar",
+    "stock": 100,
     "available": true
 }
-###
 
-###########################
-### ACTUALIZAR PRODUCTO ###
-###########################
-PUT {{host}}/api/products/67a606ddd0cee841e90fdd99
+###
+PUT {{host}}/api/products/67a605f12ff30d593c69c460
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2E5Yzk0OGIwN2RlZTcwNTE2Y2Q5OWEiLCJpYXQiOjE3MzkxODQyMjJ9.NSbw2Q_3wJzouL9Iw88QVZ7fciUuzaPHzIRecXLp2Eo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2E5YzMwNDk4NGUwZDg1ZmZkZjRjZTEiLCJ1c2VyUm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE3MzkxODQyMTJ9.8xtIoPtS76SrUGqb82is0UGEyskUAtfPTfJNPagYIQk
 
 {
-    "stock": 0,
-    "price": 50
+    "stock": 343
 }
-### 
 
-#########################
-### ELIMINAR PRODUCTO ###
-#########################
-DELETE {{host}}/api/products/67a606ddd0cee841e90fdd99
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2E5ZTIyZThkNzQ4ZGY4YjBhMTEzMzYiLCJpYXQiOjE3MzkxODY3NzF9.LqhFWQHu4VqUATAfFGqbEVNFflu8wnZoCai1L-os-Qw
+###
+DELETE {{host}}/api/products/671f6f8b2bede92b1af1a39f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2E5ZTIyMmNkYzIzMzMyMmY1NmI5MTYiLCJ1c2VyUm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE3MzkxODY3NTh9.zpE-FQs5tifXd9nOiwhT3kKwYGZnxQR5E-j_W8LVmho
 
-
-
-
-#####################
-### ver usuarios ###
-#####################
-
+#############
+# API USERS #
+#############
 
 POST {{host}}/api/users/register
 Content-Type: application/json
 
 {
-    "username": "Paco",
-    "email": "fra@homail.com",
-    "password": "123456"
+    "username": "lorenzo",
+    "email": "lorenzo@gmail.com",
+    "password": "12345"
 }
+
 ###
 POST {{host}}/api/users/login
 Content-Type: application/json
 
 {
-    "email": "fra@homail.com",
-    "password": "123456"
+    "email": "fran@hotmail.com",
+    "password": "12345"
 }
 
-#####
-GET {{host}}/api/users/porfile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2E5Yzk0OGIwN2RlZTcwNTE2Y2Q5OWEiLCJpYXQiOjE3MzkxODQyMjJ9.NSbw2Q_3wJzouL9Iw88QVZ7fciUuzaPHzIRecXLp2Eo
+###
+GET {{host}}/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2E5YzI1NTcyZTY2ODhiODExYmUwOTciLCJ1c2VyUm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE3MzkxODkwNTN9.Qlssj5m-rGo9_IY2xp2IvJaR9381VYhgb9nMrOnImOQ
